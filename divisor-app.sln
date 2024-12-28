@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{08CB5BCD-DE38-4919-98F4-D0BAA6F9A871}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{E253D40B-19A2-4BF7-86EB-5AE5EFA83235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{E253D40B-19A2-4BF7-86EB-5AE5EFA83235}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ReactApp", "ReactApp\ReactApp.esproj", "{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{E253D40B-19A2-4BF7-86EB-5AE5EFA83235}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E253D40B-19A2-4BF7-86EB-5AE5EFA83235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E253D40B-19A2-4BF7-86EB-5AE5EFA83235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6513BE-8D5F-4C17-9B13-4BA7D889CF0A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
