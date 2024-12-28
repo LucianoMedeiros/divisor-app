@@ -1,4 +1,6 @@
-﻿class Program
+﻿using Application.Services;
+
+class Program
 {
   static void Main(string[] args)
   {
@@ -9,8 +11,9 @@
       Console.WriteLine("Digite um número inteiro:");
       if (int.TryParse(Console.ReadLine(), out int numero))
       {
-        var divisors = GetDivisors(numero);
-        var primeDivisors = GetPrimeDivisors(divisors);
+        var service = new DivisorService();
+        var divisors = service.GetDivisors(numero);
+        var primeDivisors = service.GetPrimeDivisors(divisors);
 
         Console.WriteLine($"Número de Entrada: {numero}");
         Console.WriteLine($"Os divisores de {numero} são: {string.Join(", ", divisors)}");
@@ -31,47 +34,7 @@
     }
   }
 
-  static List<int> GetDivisors(int number)
-  {
-    var divisors = new List<int>();
-    for (int i = 1; i <= Math.Abs(number); i++)
-    {
-      if (number % i == 0)
-      {
-        divisors.Add(i);
-      }
-    }
-    return divisors;
-  }
-
-  static List<int> GetPrimeDivisors(List<int> divisors)
-  {
-    var primes = new List<int>();
-
-    foreach (var divisor in divisors)
-    {
-      if (IsPrime(divisor))
-      {
-        primes.Add(divisor);
-      }
-    }
-    return primes;
-  }
-
-  static bool IsPrime(int number)
-  {
-    if (number < 1) return false;
-
-    for (int i = 2; i <= Math.Sqrt(number); i++)
-    {
-      if (number % i == 0)
-      {
-        return false;
-      }
-    }
-
-    return true;
-  }
+ 
 }
 
 
