@@ -11,7 +11,7 @@ export const fetchNumberResult = async (
 ): Promise<INumberResult> => {
   try {
     const response = await axios.get<INumberResult>(
-      `https://localhost:7012/Divisor/${number}`
+      `https://localhost:7012/api/divisor/${number}`
     );
     return response.data;
   } catch (error) {

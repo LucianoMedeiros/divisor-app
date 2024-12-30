@@ -1,6 +1,5 @@
-@API_HostAddress = http://localhost:5110
+@API_HostAddress = https://localhost:7012
 
-GET {{API_HostAddress}}/Divisor/45
+GET {{API_HostAddress}}/api/Divisor/45
 Accept: application/json
-
 ###

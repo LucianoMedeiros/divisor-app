@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route("/api/[controller]")]
   public class DivisorController : ControllerBase
   {
     private readonly IDivisorService _divisorService;
@@ -17,7 +17,6 @@ namespace API.Controllers
     [HttpGet("{number}")]
     public IActionResult GetDivisors(int number)
     {
-
       if (number > 0)
       {
         var divisors = _divisorService.GetDivisors(number);
@@ -31,7 +30,7 @@ namespace API.Controllers
         });
       }
 
-      return BadRequest(new { Error = "Por favor, forneça um número inteiro positivo." });
+      return BadRequest(new { Error = "Por favor, forneÃ§a um nÃºmero inteiro positivo." });
     }
   }
 }
