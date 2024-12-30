@@ -3,3 +3,8 @@
 GET {{API_HostAddress}}/api/Divisor/45
 Accept: application/json
 ###
+
+GET {{API_HostAddress}}/api/health
+Accept: application/json
+###
+

@@ -27,7 +27,7 @@ if (app.Environment.IsDevelopment())
   app.UseSwaggerUI();
 }
 
-app.MapHealthChecks("/health");
+app.MapHealthChecks("/api/health");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseCors();
