@@ -10,7 +10,7 @@ export const NumberSearchView: FC<NumberSearchViewProps> = ({ viewModel }) => {
 
   const handleSearch = () => {
     if (number) {
-      viewModel.search(Number(number));
+      viewModel.search(BigInt(number));
     }
   };
 

@@ -5,7 +5,7 @@ export interface IUseNumberSearchReturn {
   result: INumberResult | null;
   error: string | null;
   loading: boolean;
-  search: (number: number) => Promise<void>;
+  search: (number: bigint) => Promise<void>;
 }
 
 const useNumberSearch = (): IUseNumberSearchReturn => {
@@ -13,7 +13,7 @@ const useNumberSearch = (): IUseNumberSearchReturn => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const search = async (number: number): Promise<void> => {
+  const search = async (number: bigint): Promise<void> => {
     setLoading(true);
     setError(null);
 

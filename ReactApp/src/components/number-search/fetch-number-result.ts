@@ -7,7 +7,7 @@ export interface INumberResult {
 }
 
 export const fetchNumberResult = async (
-  number: number
+  number: bigint
 ): Promise<INumberResult> => {
   try {
     const response = await axios.get<INumberResult>(
