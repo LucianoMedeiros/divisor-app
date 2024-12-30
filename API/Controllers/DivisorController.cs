@@ -15,7 +15,7 @@ namespace API.Controllers
     }
 
     [HttpGet("{number}")]
-    public IActionResult GetDivisors(int number)
+    public IActionResult GetDivisors(long number)
     {
       if (number > 0)
       {

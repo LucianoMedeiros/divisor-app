@@ -9,7 +9,7 @@ class Program
     while (_continue)
     {
       Console.WriteLine("Digite um número inteiro:");
-      if (int.TryParse(Console.ReadLine(), out int numero))
+      if (long.TryParse(Console.ReadLine(), out long numero))
       {
         var service = new DivisorService();
         var divisors = service.GetDivisors(numero);
@@ -25,16 +25,14 @@ class Program
       }
 
       Console.WriteLine("Deseja digitar um novo número? (s/n):");
-      string response = Console.ReadLine().Trim().ToLower();
+      var response = Console.ReadLine();
 
-      if (response != "s")
+      if (response != null && response.ToLower().Trim() != "s")
       {
         _continue = false;
       }
     }
   }
-
- 
 }
 
 

@@ -2,7 +2,7 @@
 {
   public interface IDivisorService
   {
-    List<int> GetDivisors(int number);
-    List<int> GetPrimeDivisors(List<int> divisors);
+    List<long> GetDivisors(long number);
+    List<long> GetPrimeDivisors(List<long> divisors);
   }
 }

@@ -2,22 +2,42 @@
 {
   public class DivisorService : IDivisorService
   {
-    public List<int> GetDivisors(int number)
+    private static readonly Dictionary<long, bool> primeCache = new();
+
+    public List<long> GetDivisors(long number)
     {
-      var divisors = new List<int>();
-      for (int i = 1; i <= Math.Abs(number); i++)
+      if (number == 0)
+      {
+        throw new ArgumentException("O número não pode ser zero.");
+      }
+
+      var divisors = new List<long>();
+      long limit = (long)Math.Sqrt(Math.Abs(number));
+
+      for (long i = 1; i <= limit; i++)
       {
         if (number % i == 0)
         {
           divisors.Add(i);
+          if (i != number / i)
+          {
+            divisors.Add(number / i);
+          }
         }
       }
+
+      divisors.Sort();
       return divisors;
     }
 
-    public List<int> GetPrimeDivisors(List<int> divisors)
+    public List<long> GetPrimeDivisors(List<long> divisors)
     {
-      var primes = new List<int>();
+      if (divisors == null || divisors.Count == 0)
+      {
+        throw new ArgumentException("A lista de divisores não pode ser nula ou vazia.");
+      }
+
+      var primes = new List<long>();
 
       foreach (var divisor in divisors)
       {
@@ -26,23 +46,34 @@
           primes.Add(divisor);
         }
       }
-      return primes;
+
+      return primes.OrderBy(x => x).ToList();
     }
 
-
-    private static bool IsPrime(int number)
+    private static bool IsPrime(long number)
     {
       if (number < 1) return false;
+      if (number == 1 || number == 2 || number == 3) return true;
+      if (number % 2 == 0 || number % 3 == 0) return false;
 
-      for (int i = 2; i <= Math.Sqrt(number); i++)
+      if (primeCache.TryGetValue(number, out bool isCachedPrime))
       {
-        if (number % i == 0)
+        return isCachedPrime;
+      }
+
+      bool result = true;
+
+      for (long i = 5; i * i <= number; i += 6)
+      {
+        if (number % i == 0 || number % (i + 2) == 0)
         {
-          return false;
+          result = false;
+          break;
         }
       }
 
-      return true;
+      primeCache[number] = result;
+      return result;
     }
   }
 }
